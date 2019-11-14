@@ -41,7 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interface\IPlanReportService.cs" />
+    <Compile Include="PlanReportService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModel\PageLayUI.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ErpMaterialMVC.Common\ErpMaterialMVC.Common.csproj">
@@ -56,6 +59,9 @@
       <Project>{f583f5ef-83ba-4ae3-9717-eb42ab99ec61}</Project>
       <Name>ErpMaterialMVC.Repository</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

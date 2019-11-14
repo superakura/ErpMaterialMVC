@@ -1,21 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ErpMaterial.Models;
-using Microsoft.EntityFrameworkCore;
+using ErpMaterialMVC.Models;
 
-namespace ErpMaterial.Repository
+namespace ErpMaterialMVC.Repository
 {
     public class GenericRepository<TEntity> : IGenericRepository<TEntity> where TEntity : class
     {
-        private ErpMaterialContext db;
+        private ErpMaterialEntities db;
         private DbSet<TEntity> dbset;
         public GenericRepository()
         {
-            this.db = new ErpMaterialContext();
+            this.db = new ErpMaterialEntities();
             this.dbset = db.Set<TEntity>();
         }
 
