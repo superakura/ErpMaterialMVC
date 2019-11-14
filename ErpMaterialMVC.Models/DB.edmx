@@ -1,0 +1,640 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ErpMaterialModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ERP_DETAIL">
+          <Key>
+            <PropertyRef Name="ERP_DETAIL_ID" />
+          </Key>
+          <Property Name="ERP_DETAIL_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MBLNR" Type="nvarchar" MaxLength="500" />
+          <Property Name="MJAHR" Type="nvarchar" MaxLength="500" />
+          <Property Name="BUDAT" Type="nvarchar" MaxLength="500" />
+          <Property Name="BLDAT" Type="nvarchar" MaxLength="500" />
+          <Property Name="BELNR" Type="nvarchar" MaxLength="500" />
+          <Property Name="BWART" Type="nvarchar" MaxLength="500" />
+          <Property Name="MATNR" Type="nvarchar" MaxLength="500" />
+          <Property Name="MAKTX" Type="nvarchar" MaxLength="500" />
+          <Property Name="MATKL" Type="nvarchar" MaxLength="500" />
+          <Property Name="WERKS" Type="nvarchar" MaxLength="500" />
+          <Property Name="LGORT" Type="nvarchar" MaxLength="500" />
+          <Property Name="LGORT_DESC" Type="nvarchar" MaxLength="500" />
+          <Property Name="SOBKZ" Type="nvarchar" MaxLength="500" />
+          <Property Name="LIFNR" Type="nvarchar" MaxLength="500" />
+          <Property Name="LIFNR_DESC" Type="nvarchar" MaxLength="500" />
+          <Property Name="KUNNR" Type="nvarchar" MaxLength="500" />
+          <Property Name="MENGE" Type="float" />
+          <Property Name="MEINS" Type="nvarchar" MaxLength="500" />
+          <Property Name="EBELN" Type="nvarchar" MaxLength="500" />
+          <Property Name="EBELP" Type="nvarchar" MaxLength="500" />
+          <Property Name="RSNUM" Type="nvarchar" MaxLength="500" />
+          <Property Name="RSPOS" Type="nvarchar" MaxLength="500" />
+          <Property Name="UMWRK" Type="nvarchar" MaxLength="500" />
+          <Property Name="UMLGO" Type="nvarchar" MaxLength="500" />
+          <Property Name="UMLGO_DESC" Type="nvarchar" MaxLength="500" />
+          <Property Name="KOSTL" Type="nvarchar" MaxLength="500" />
+          <Property Name="KTEXT" Type="nvarchar" MaxLength="500" />
+          <Property Name="PSPEL" Type="nvarchar" MaxLength="500" />
+          <Property Name="ZTHDW" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="ERP_PLAN">
+          <Key>
+            <PropertyRef Name="ERP_PLAN_ID" />
+          </Key>
+          <Property Name="ERP_PLAN_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RSNUM" Type="nvarchar" MaxLength="500" />
+          <Property Name="RSPOS" Type="nvarchar" MaxLength="500" />
+          <Property Name="MATNR" Type="nvarchar" MaxLength="500" />
+          <Property Name="MAKTX" Type="nvarchar" MaxLength="500" />
+          <Property Name="BDMNG" Type="float" />
+          <Property Name="ZTBDW" Type="nvarchar" MaxLength="500" />
+          <Property Name="RKPF" Type="nvarchar" MaxLength="500" />
+          <Property Name="ZTBRQ" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="ERP_PURCHASE">
+          <Key>
+            <PropertyRef Name="ERP_PURCHASE_ID" />
+          </Key>
+          <Property Name="ERP_PURCHASE_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EBELN" Type="nvarchar" MaxLength="500" />
+          <Property Name="EBELP" Type="nvarchar" MaxLength="500" />
+          <Property Name="MATNR" Type="nvarchar" MaxLength="500" />
+          <Property Name="MAKTX" Type="nvarchar" MaxLength="500" />
+          <Property Name="MENGE" Type="float" />
+          <Property Name="LIFNR" Type="nvarchar" MaxLength="500" />
+          <Property Name="LIFNR_DESC" Type="nvarchar" MaxLength="500" />
+          <Property Name="INTERIORCODE" Type="nvarchar" MaxLength="500" />
+          <Property Name="RELEASE_DATE" Type="nvarchar" MaxLength="500" />
+          <Property Name="NETPR" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ERP_STORAGE">
+          <Key>
+            <PropertyRef Name="ERP_STORAGE_ID" />
+          </Key>
+          <Property Name="ERP_STORAGE_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="WERKS" Type="nvarchar" MaxLength="500" />
+          <Property Name="LGORT" Type="nvarchar" MaxLength="500" />
+          <Property Name="LGNUM" Type="nvarchar" MaxLength="500" />
+          <Property Name="LGTYP" Type="nvarchar" MaxLength="500" />
+          <Property Name="LGPLA" Type="nvarchar" MaxLength="500" />
+          <Property Name="MATNR" Type="nvarchar" MaxLength="500" />
+          <Property Name="MAKTX" Type="nvarchar" MaxLength="500" />
+          <Property Name="MATKL" Type="nvarchar" MaxLength="500" />
+          <Property Name="VERME" Type="float" />
+          <Property Name="SALK" Type="float" />
+          <Property Name="MSEHL" Type="nvarchar" MaxLength="500" />
+          <Property Name="WDATU" Type="nvarchar" MaxLength="500" />
+          <Property Name="NAME_TEXTC" Type="nvarchar" MaxLength="500" />
+          <Property Name="AGING" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="MaterialProcurement">
+          <Key>
+            <PropertyRef Name="MaterialProcurementID" />
+          </Key>
+          <Property Name="MaterialProcurementID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MaterialCode" Type="nvarchar" MaxLength="500" />
+          <Property Name="MaterialName" Type="nvarchar" MaxLength="500" />
+          <Property Name="PurchaseOrderNumber" Type="nvarchar" MaxLength="500" />
+          <Property Name="MaterialCount" Type="int" />
+          <Property Name="Supplier" Type="nvarchar" MaxLength="500" />
+          <Property Name="ContractNo" Type="nvarchar" MaxLength="500" />
+          <Property Name="ContractDate" Type="nvarchar" MaxLength="500" />
+          <Property Name="ProcurementPrice" Type="nvarchar" MaxLength="50" />
+          <Property Name="MaterialArrivalDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="MaterialStorage">
+          <Key>
+            <PropertyRef Name="MaterialStorageID" />
+          </Key>
+          <Property Name="MaterialStorageID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MaterialCode" Type="nvarchar" MaxLength="500" />
+          <Property Name="MaterialDesc" Type="nvarchar" MaxLength="500" />
+          <Property Name="MaterialCount" Type="int" />
+          <Property Name="StorageTime" Type="datetime" />
+          <Property Name="TransferTime" Type="datetime" />
+          <Property Name="Supplier" Type="nvarchar" MaxLength="500" />
+          <Property Name="ContractNo" Type="nvarchar" MaxLength="500" />
+          <Property Name="PurchaseOrderNumber" Type="nvarchar" MaxLength="500" />
+          <Property Name="PlanReportDept" Type="nvarchar" MaxLength="500" />
+          <Property Name="PlanReportPerson" Type="nvarchar" MaxLength="500" />
+          <Property Name="PlanReportDateTime" Type="datetime" />
+          <Property Name="MaterialAge" Type="datetime" />
+        </EntityType>
+        <EntityType Name="MaterialUse">
+          <Key>
+            <PropertyRef Name="MaterialUseID" />
+          </Key>
+          <Property Name="MaterialUseID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MaterialCode" Type="nvarchar" MaxLength="500" />
+          <Property Name="MaterialDesc" Type="nvarchar" MaxLength="500" />
+          <Property Name="MaterialCount" Type="int" />
+          <Property Name="ContractNo" Type="nvarchar" MaxLength="500" />
+          <Property Name="StorageTime" Type="datetime" />
+          <Property Name="TransferTime" Type="datetime" />
+          <Property Name="OutStockTime" Type="datetime" />
+          <Property Name="UsePerson" Type="nvarchar" MaxLength="500" />
+          <Property Name="UserDept" Type="nvarchar" MaxLength="500" />
+          <Property Name="DeviceNo" Type="nvarchar" MaxLength="500" />
+          <Property Name="MaterialAge" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="MaterialWithDrawal">
+          <Key>
+            <PropertyRef Name="MaterialWithDrawalID" />
+          </Key>
+          <Property Name="MaterialWithDrawalID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MaterialCode" Type="nvarchar" MaxLength="500" />
+          <Property Name="MaterialDesc" Type="nvarchar" MaxLength="500" />
+          <Property Name="MaterialCount" Type="nchar" MaxLength="10" />
+          <Property Name="StorageTime" Type="nchar" MaxLength="10" />
+          <Property Name="TransferTime" Type="nchar" MaxLength="10" />
+          <Property Name="OutStockTime" Type="nchar" MaxLength="10" />
+          <Property Name="UsePerson" Type="nvarchar" MaxLength="500" />
+          <Property Name="UserDept" Type="nvarchar" MaxLength="500" />
+          <Property Name="Custodian" Type="nvarchar" MaxLength="500" />
+          <Property Name="ReturnDate" Type="nchar" MaxLength="10" />
+          <Property Name="ProjectName" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="PlanReport">
+          <Key>
+            <PropertyRef Name="PlanReportID" />
+          </Key>
+          <Property Name="PlanReportID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MaterialCode" Type="nvarchar" MaxLength="500" />
+          <Property Name="MaterialDesc" Type="nvarchar" MaxLength="500" />
+          <Property Name="MaterialCount" Type="int" />
+          <Property Name="PlanReportDept" Type="nvarchar" MaxLength="500" />
+          <Property Name="PlanReportPerson" Type="nvarchar" MaxLength="500" />
+          <Property Name="PlanReportDateTime" Type="datetime" />
+          <Property Name="MaterialAge" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="Stock">
+          <Key>
+            <PropertyRef Name="StockID" />
+          </Key>
+          <Property Name="StockID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MaterialGroup" Type="nvarchar" MaxLength="500" />
+          <Property Name="MaterialCode" Type="nvarchar" MaxLength="500" />
+          <Property Name="MaterialDesc" Type="nvarchar" MaxLength="500" />
+          <Property Name="MaterialCount" Type="nvarchar" MaxLength="500" />
+          <Property Name="Amount" Type="float" />
+          <Property Name="UnitOfMeasurement" Type="nvarchar" MaxLength="500" />
+          <Property Name="StockNum" Type="nvarchar" MaxLength="500" />
+          <Property Name="StorageTime" Type="datetime" />
+          <Property Name="WarehousePosition" Type="nvarchar" MaxLength="500" />
+          <Property Name="BookKeeper" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="WasteMaterials">
+          <Key>
+            <PropertyRef Name="WasteMaterialsID" />
+          </Key>
+          <Property Name="WasteMaterialsID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="ErpMaterialModelStoreContainer">
+          <EntitySet Name="ERP_DETAIL" EntityType="Self.ERP_DETAIL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ERP_PLAN" EntityType="Self.ERP_PLAN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ERP_PURCHASE" EntityType="Self.ERP_PURCHASE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ERP_STORAGE" EntityType="Self.ERP_STORAGE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MaterialProcurement" EntityType="Self.MaterialProcurement" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MaterialStorage" EntityType="Self.MaterialStorage" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MaterialUse" EntityType="Self.MaterialUse" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MaterialWithDrawal" EntityType="Self.MaterialWithDrawal" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PlanReport" EntityType="Self.PlanReport" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Stock" EntityType="Self.Stock" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WasteMaterials" EntityType="Self.WasteMaterials" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ErpMaterialModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ERP_DETAIL">
+          <Key>
+            <PropertyRef Name="ERP_DETAIL_ID" />
+          </Key>
+          <Property Name="ERP_DETAIL_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MBLNR" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="MJAHR" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="BUDAT" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="BLDAT" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="BELNR" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="BWART" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="MATNR" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="MAKTX" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="MATKL" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="WERKS" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="LGORT" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="LGORT_DESC" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="SOBKZ" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="LIFNR" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="LIFNR_DESC" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="KUNNR" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="MENGE" Type="Double" />
+          <Property Name="MEINS" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="EBELN" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="EBELP" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="RSNUM" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="RSPOS" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="UMWRK" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="UMLGO" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="UMLGO_DESC" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="KOSTL" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="KTEXT" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="PSPEL" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ZTHDW" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ERP_PLAN">
+          <Key>
+            <PropertyRef Name="ERP_PLAN_ID" />
+          </Key>
+          <Property Name="ERP_PLAN_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RSNUM" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="RSPOS" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="MATNR" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="MAKTX" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="BDMNG" Type="Double" />
+          <Property Name="ZTBDW" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="RKPF" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ZTBRQ" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ERP_PURCHASE">
+          <Key>
+            <PropertyRef Name="ERP_PURCHASE_ID" />
+          </Key>
+          <Property Name="ERP_PURCHASE_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EBELN" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="EBELP" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="MATNR" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="MAKTX" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="MENGE" Type="Double" />
+          <Property Name="LIFNR" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="LIFNR_DESC" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="INTERIORCODE" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="RELEASE_DATE" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="NETPR" Type="Double" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ERP_STORAGE">
+          <Key>
+            <PropertyRef Name="ERP_STORAGE_ID" />
+          </Key>
+          <Property Name="ERP_STORAGE_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="WERKS" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="LGORT" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="LGNUM" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="LGTYP" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="LGPLA" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="MATNR" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="MAKTX" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="MATKL" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="VERME" Type="Double" />
+          <Property Name="SALK" Type="Double" />
+          <Property Name="MSEHL" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="WDATU" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="NAME_TEXTC" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="AGING" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="MaterialProcurement">
+          <Key>
+            <PropertyRef Name="MaterialProcurementID" />
+          </Key>
+          <Property Name="MaterialProcurementID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MaterialCode" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="MaterialName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="PurchaseOrderNumber" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="MaterialCount" Type="Int32" />
+          <Property Name="Supplier" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ContractNo" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ContractDate" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ProcurementPrice" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MaterialArrivalDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="MaterialStorage">
+          <Key>
+            <PropertyRef Name="MaterialStorageID" />
+          </Key>
+          <Property Name="MaterialStorageID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MaterialCode" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="MaterialDesc" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="MaterialCount" Type="Int32" />
+          <Property Name="StorageTime" Type="DateTime" Precision="3" />
+          <Property Name="TransferTime" Type="DateTime" Precision="3" />
+          <Property Name="Supplier" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ContractNo" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="PurchaseOrderNumber" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="PlanReportDept" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="PlanReportPerson" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="PlanReportDateTime" Type="DateTime" Precision="3" />
+          <Property Name="MaterialAge" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="MaterialUse">
+          <Key>
+            <PropertyRef Name="MaterialUseID" />
+          </Key>
+          <Property Name="MaterialUseID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MaterialCode" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="MaterialDesc" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="MaterialCount" Type="Int32" />
+          <Property Name="ContractNo" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="StorageTime" Type="DateTime" Precision="3" />
+          <Property Name="TransferTime" Type="DateTime" Precision="3" />
+          <Property Name="OutStockTime" Type="DateTime" Precision="3" />
+          <Property Name="UsePerson" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="UserDept" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="DeviceNo" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="MaterialAge" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="MaterialWithDrawal">
+          <Key>
+            <PropertyRef Name="MaterialWithDrawalID" />
+          </Key>
+          <Property Name="MaterialWithDrawalID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MaterialCode" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="MaterialDesc" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="MaterialCount" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="StorageTime" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="TransferTime" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="OutStockTime" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="UsePerson" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="UserDept" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Custodian" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ReturnDate" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="ProjectName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="PlanReport">
+          <Key>
+            <PropertyRef Name="PlanReportID" />
+          </Key>
+          <Property Name="PlanReportID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MaterialCode" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="MaterialDesc" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="MaterialCount" Type="Int32" />
+          <Property Name="PlanReportDept" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="PlanReportPerson" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="PlanReportDateTime" Type="DateTime" Precision="3" />
+          <Property Name="MaterialAge" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Stock">
+          <Key>
+            <PropertyRef Name="StockID" />
+          </Key>
+          <Property Name="StockID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MaterialGroup" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="MaterialCode" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="MaterialDesc" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="MaterialCount" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Amount" Type="Double" />
+          <Property Name="UnitOfMeasurement" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="StockNum" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="StorageTime" Type="DateTime" Precision="3" />
+          <Property Name="WarehousePosition" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="BookKeeper" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="WasteMaterials">
+          <Key>
+            <PropertyRef Name="WasteMaterialsID" />
+          </Key>
+          <Property Name="WasteMaterialsID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityContainer Name="ErpMaterialEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ERP_DETAIL" EntityType="Self.ERP_DETAIL" />
+          <EntitySet Name="ERP_PLAN" EntityType="Self.ERP_PLAN" />
+          <EntitySet Name="ERP_PURCHASE" EntityType="Self.ERP_PURCHASE" />
+          <EntitySet Name="ERP_STORAGE" EntityType="Self.ERP_STORAGE" />
+          <EntitySet Name="MaterialProcurement" EntityType="Self.MaterialProcurement" />
+          <EntitySet Name="MaterialStorage" EntityType="Self.MaterialStorage" />
+          <EntitySet Name="MaterialUse" EntityType="Self.MaterialUse" />
+          <EntitySet Name="MaterialWithDrawal" EntityType="Self.MaterialWithDrawal" />
+          <EntitySet Name="PlanReport" EntityType="Self.PlanReport" />
+          <EntitySet Name="Stock" EntityType="Self.Stock" />
+          <EntitySet Name="WasteMaterials" EntityType="Self.WasteMaterials" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ErpMaterialModelStoreContainer" CdmEntityContainer="ErpMaterialEntities">
+          <EntitySetMapping Name="ERP_DETAIL">
+            <EntityTypeMapping TypeName="ErpMaterialModel.ERP_DETAIL">
+              <MappingFragment StoreEntitySet="ERP_DETAIL">
+                <ScalarProperty Name="ERP_DETAIL_ID" ColumnName="ERP_DETAIL_ID" />
+                <ScalarProperty Name="MBLNR" ColumnName="MBLNR" />
+                <ScalarProperty Name="MJAHR" ColumnName="MJAHR" />
+                <ScalarProperty Name="BUDAT" ColumnName="BUDAT" />
+                <ScalarProperty Name="BLDAT" ColumnName="BLDAT" />
+                <ScalarProperty Name="BELNR" ColumnName="BELNR" />
+                <ScalarProperty Name="BWART" ColumnName="BWART" />
+                <ScalarProperty Name="MATNR" ColumnName="MATNR" />
+                <ScalarProperty Name="MAKTX" ColumnName="MAKTX" />
+                <ScalarProperty Name="MATKL" ColumnName="MATKL" />
+                <ScalarProperty Name="WERKS" ColumnName="WERKS" />
+                <ScalarProperty Name="LGORT" ColumnName="LGORT" />
+                <ScalarProperty Name="LGORT_DESC" ColumnName="LGORT_DESC" />
+                <ScalarProperty Name="SOBKZ" ColumnName="SOBKZ" />
+                <ScalarProperty Name="LIFNR" ColumnName="LIFNR" />
+                <ScalarProperty Name="LIFNR_DESC" ColumnName="LIFNR_DESC" />
+                <ScalarProperty Name="KUNNR" ColumnName="KUNNR" />
+                <ScalarProperty Name="MENGE" ColumnName="MENGE" />
+                <ScalarProperty Name="MEINS" ColumnName="MEINS" />
+                <ScalarProperty Name="EBELN" ColumnName="EBELN" />
+                <ScalarProperty Name="EBELP" ColumnName="EBELP" />
+                <ScalarProperty Name="RSNUM" ColumnName="RSNUM" />
+                <ScalarProperty Name="RSPOS" ColumnName="RSPOS" />
+                <ScalarProperty Name="UMWRK" ColumnName="UMWRK" />
+                <ScalarProperty Name="UMLGO" ColumnName="UMLGO" />
+                <ScalarProperty Name="UMLGO_DESC" ColumnName="UMLGO_DESC" />
+                <ScalarProperty Name="KOSTL" ColumnName="KOSTL" />
+                <ScalarProperty Name="KTEXT" ColumnName="KTEXT" />
+                <ScalarProperty Name="PSPEL" ColumnName="PSPEL" />
+                <ScalarProperty Name="ZTHDW" ColumnName="ZTHDW" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ERP_PLAN">
+            <EntityTypeMapping TypeName="ErpMaterialModel.ERP_PLAN">
+              <MappingFragment StoreEntitySet="ERP_PLAN">
+                <ScalarProperty Name="ERP_PLAN_ID" ColumnName="ERP_PLAN_ID" />
+                <ScalarProperty Name="RSNUM" ColumnName="RSNUM" />
+                <ScalarProperty Name="RSPOS" ColumnName="RSPOS" />
+                <ScalarProperty Name="MATNR" ColumnName="MATNR" />
+                <ScalarProperty Name="MAKTX" ColumnName="MAKTX" />
+                <ScalarProperty Name="BDMNG" ColumnName="BDMNG" />
+                <ScalarProperty Name="ZTBDW" ColumnName="ZTBDW" />
+                <ScalarProperty Name="RKPF" ColumnName="RKPF" />
+                <ScalarProperty Name="ZTBRQ" ColumnName="ZTBRQ" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ERP_PURCHASE">
+            <EntityTypeMapping TypeName="ErpMaterialModel.ERP_PURCHASE">
+              <MappingFragment StoreEntitySet="ERP_PURCHASE">
+                <ScalarProperty Name="ERP_PURCHASE_ID" ColumnName="ERP_PURCHASE_ID" />
+                <ScalarProperty Name="EBELN" ColumnName="EBELN" />
+                <ScalarProperty Name="EBELP" ColumnName="EBELP" />
+                <ScalarProperty Name="MATNR" ColumnName="MATNR" />
+                <ScalarProperty Name="MAKTX" ColumnName="MAKTX" />
+                <ScalarProperty Name="MENGE" ColumnName="MENGE" />
+                <ScalarProperty Name="LIFNR" ColumnName="LIFNR" />
+                <ScalarProperty Name="LIFNR_DESC" ColumnName="LIFNR_DESC" />
+                <ScalarProperty Name="INTERIORCODE" ColumnName="INTERIORCODE" />
+                <ScalarProperty Name="RELEASE_DATE" ColumnName="RELEASE_DATE" />
+                <ScalarProperty Name="NETPR" ColumnName="NETPR" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ERP_STORAGE">
+            <EntityTypeMapping TypeName="ErpMaterialModel.ERP_STORAGE">
+              <MappingFragment StoreEntitySet="ERP_STORAGE">
+                <ScalarProperty Name="ERP_STORAGE_ID" ColumnName="ERP_STORAGE_ID" />
+                <ScalarProperty Name="WERKS" ColumnName="WERKS" />
+                <ScalarProperty Name="LGORT" ColumnName="LGORT" />
+                <ScalarProperty Name="LGNUM" ColumnName="LGNUM" />
+                <ScalarProperty Name="LGTYP" ColumnName="LGTYP" />
+                <ScalarProperty Name="LGPLA" ColumnName="LGPLA" />
+                <ScalarProperty Name="MATNR" ColumnName="MATNR" />
+                <ScalarProperty Name="MAKTX" ColumnName="MAKTX" />
+                <ScalarProperty Name="MATKL" ColumnName="MATKL" />
+                <ScalarProperty Name="VERME" ColumnName="VERME" />
+                <ScalarProperty Name="SALK" ColumnName="SALK" />
+                <ScalarProperty Name="MSEHL" ColumnName="MSEHL" />
+                <ScalarProperty Name="WDATU" ColumnName="WDATU" />
+                <ScalarProperty Name="NAME_TEXTC" ColumnName="NAME_TEXTC" />
+                <ScalarProperty Name="AGING" ColumnName="AGING" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MaterialProcurement">
+            <EntityTypeMapping TypeName="ErpMaterialModel.MaterialProcurement">
+              <MappingFragment StoreEntitySet="MaterialProcurement">
+                <ScalarProperty Name="MaterialProcurementID" ColumnName="MaterialProcurementID" />
+                <ScalarProperty Name="MaterialCode" ColumnName="MaterialCode" />
+                <ScalarProperty Name="MaterialName" ColumnName="MaterialName" />
+                <ScalarProperty Name="PurchaseOrderNumber" ColumnName="PurchaseOrderNumber" />
+                <ScalarProperty Name="MaterialCount" ColumnName="MaterialCount" />
+                <ScalarProperty Name="Supplier" ColumnName="Supplier" />
+                <ScalarProperty Name="ContractNo" ColumnName="ContractNo" />
+                <ScalarProperty Name="ContractDate" ColumnName="ContractDate" />
+                <ScalarProperty Name="ProcurementPrice" ColumnName="ProcurementPrice" />
+                <ScalarProperty Name="MaterialArrivalDate" ColumnName="MaterialArrivalDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MaterialStorage">
+            <EntityTypeMapping TypeName="ErpMaterialModel.MaterialStorage">
+              <MappingFragment StoreEntitySet="MaterialStorage">
+                <ScalarProperty Name="MaterialStorageID" ColumnName="MaterialStorageID" />
+                <ScalarProperty Name="MaterialCode" ColumnName="MaterialCode" />
+                <ScalarProperty Name="MaterialDesc" ColumnName="MaterialDesc" />
+                <ScalarProperty Name="MaterialCount" ColumnName="MaterialCount" />
+                <ScalarProperty Name="StorageTime" ColumnName="StorageTime" />
+                <ScalarProperty Name="TransferTime" ColumnName="TransferTime" />
+                <ScalarProperty Name="Supplier" ColumnName="Supplier" />
+                <ScalarProperty Name="ContractNo" ColumnName="ContractNo" />
+                <ScalarProperty Name="PurchaseOrderNumber" ColumnName="PurchaseOrderNumber" />
+                <ScalarProperty Name="PlanReportDept" ColumnName="PlanReportDept" />
+                <ScalarProperty Name="PlanReportPerson" ColumnName="PlanReportPerson" />
+                <ScalarProperty Name="PlanReportDateTime" ColumnName="PlanReportDateTime" />
+                <ScalarProperty Name="MaterialAge" ColumnName="MaterialAge" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MaterialUse">
+            <EntityTypeMapping TypeName="ErpMaterialModel.MaterialUse">
+              <MappingFragment StoreEntitySet="MaterialUse">
+                <ScalarProperty Name="MaterialUseID" ColumnName="MaterialUseID" />
+                <ScalarProperty Name="MaterialCode" ColumnName="MaterialCode" />
+                <ScalarProperty Name="MaterialDesc" ColumnName="MaterialDesc" />
+                <ScalarProperty Name="MaterialCount" ColumnName="MaterialCount" />
+                <ScalarProperty Name="ContractNo" ColumnName="ContractNo" />
+                <ScalarProperty Name="StorageTime" ColumnName="StorageTime" />
+                <ScalarProperty Name="TransferTime" ColumnName="TransferTime" />
+                <ScalarProperty Name="OutStockTime" ColumnName="OutStockTime" />
+                <ScalarProperty Name="UsePerson" ColumnName="UsePerson" />
+                <ScalarProperty Name="UserDept" ColumnName="UserDept" />
+                <ScalarProperty Name="DeviceNo" ColumnName="DeviceNo" />
+                <ScalarProperty Name="MaterialAge" ColumnName="MaterialAge" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MaterialWithDrawal">
+            <EntityTypeMapping TypeName="ErpMaterialModel.MaterialWithDrawal">
+              <MappingFragment StoreEntitySet="MaterialWithDrawal">
+                <ScalarProperty Name="MaterialWithDrawalID" ColumnName="MaterialWithDrawalID" />
+                <ScalarProperty Name="MaterialCode" ColumnName="MaterialCode" />
+                <ScalarProperty Name="MaterialDesc" ColumnName="MaterialDesc" />
+                <ScalarProperty Name="MaterialCount" ColumnName="MaterialCount" />
+                <ScalarProperty Name="StorageTime" ColumnName="StorageTime" />
+                <ScalarProperty Name="TransferTime" ColumnName="TransferTime" />
+                <ScalarProperty Name="OutStockTime" ColumnName="OutStockTime" />
+                <ScalarProperty Name="UsePerson" ColumnName="UsePerson" />
+                <ScalarProperty Name="UserDept" ColumnName="UserDept" />
+                <ScalarProperty Name="Custodian" ColumnName="Custodian" />
+                <ScalarProperty Name="ReturnDate" ColumnName="ReturnDate" />
+                <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PlanReport">
+            <EntityTypeMapping TypeName="ErpMaterialModel.PlanReport">
+              <MappingFragment StoreEntitySet="PlanReport">
+                <ScalarProperty Name="PlanReportID" ColumnName="PlanReportID" />
+                <ScalarProperty Name="MaterialCode" ColumnName="MaterialCode" />
+                <ScalarProperty Name="MaterialDesc" ColumnName="MaterialDesc" />
+                <ScalarProperty Name="MaterialCount" ColumnName="MaterialCount" />
+                <ScalarProperty Name="PlanReportDept" ColumnName="PlanReportDept" />
+                <ScalarProperty Name="PlanReportPerson" ColumnName="PlanReportPerson" />
+                <ScalarProperty Name="PlanReportDateTime" ColumnName="PlanReportDateTime" />
+                <ScalarProperty Name="MaterialAge" ColumnName="MaterialAge" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Stock">
+            <EntityTypeMapping TypeName="ErpMaterialModel.Stock">
+              <MappingFragment StoreEntitySet="Stock">
+                <ScalarProperty Name="StockID" ColumnName="StockID" />
+                <ScalarProperty Name="MaterialGroup" ColumnName="MaterialGroup" />
+                <ScalarProperty Name="MaterialCode" ColumnName="MaterialCode" />
+                <ScalarProperty Name="MaterialDesc" ColumnName="MaterialDesc" />
+                <ScalarProperty Name="MaterialCount" ColumnName="MaterialCount" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="UnitOfMeasurement" ColumnName="UnitOfMeasurement" />
+                <ScalarProperty Name="StockNum" ColumnName="StockNum" />
+                <ScalarProperty Name="StorageTime" ColumnName="StorageTime" />
+                <ScalarProperty Name="WarehousePosition" ColumnName="WarehousePosition" />
+                <ScalarProperty Name="BookKeeper" ColumnName="BookKeeper" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WasteMaterials">
+            <EntityTypeMapping TypeName="ErpMaterialModel.WasteMaterials">
+              <MappingFragment StoreEntitySet="WasteMaterials">
+                <ScalarProperty Name="WasteMaterialsID" ColumnName="WasteMaterialsID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
