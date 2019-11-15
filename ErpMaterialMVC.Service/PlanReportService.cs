@@ -30,6 +30,7 @@ namespace ErpMaterialMVC.Service
             var skip = page == 1 ? 0 : (page - 1) * limit;
 
             var planReport = _repo.GetList();
+
             PageLayUI<PlanReport> pageLayUI = new PageLayUI<PlanReport>();
             pageLayUI.count = planReport.Count();
             pageLayUI.data = planReport.OrderBy(o=>o.PlanReportID).Skip(skip).Take(limit).ToList();

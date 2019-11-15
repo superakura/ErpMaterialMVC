@@ -5,6 +5,66 @@
 }
 
 @section modal{
+    <div id="addLay" style="display: none;">
+        <div class="layui-row">
+            <div class="layui-col-md11">
+                <form class="layui-form">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">姓名</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="userName" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">单选框</label>
+                        <div class="layui-input-block">
+                            <input type="radio" name="sex" value="0" title="男">
+                            <input type="radio" name="sex" value="1" title="女" checked>
+                        </div>
+                    </div>
+                    <div class="layui-form-item layui-form-text">
+                        <label class="layui-form-label">请填写描述</label>
+                        <div class="layui-input-block">
+                            <textarea placeholder="请输入内容" name="desc" class="layui-textarea"></textarea>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">下拉选择框</label>
+                        <div class="layui-input-block">
+                            <select name="interest" lay-filter="aihao">
+                                <option value="0">写作</option>
+                                <option value="1">阅读</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">开关开</label>
+                        <div class="layui-input-block">
+                            <input type="checkbox" name="isOk" checked lay-skin="switch">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block">
+                            <button class="layui-btn" lay-submit lay-filter="*">立即提交</button>
+                            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+    <div id="delLay" style="display: none;">
+        <div class="layui-form-item">
+            <label class="layui-form-label">删除</label>
+            <div class="layui-input-inline">
+                <input type="text" name="username" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <button class="layui-btn" lay-submit="" lay-filter="demo2">删除提交</button>
+        </div>
+    </div>
 }
 <div class="layui-row">
     <div class="layui-col-xs2">
@@ -21,7 +81,7 @@
             <form class="layui-form layui-form-pane" action="">
                 <div class="layui-form-item">
                     <div class="layui-inline">
-                        <label class="layui-form-label">物资编码</label>
+                        <label class="layui-form-label">提报时间</label>
                         <div class="layui-input-block">
                             <input type="text" name="date" id="btnDate" autocomplete="off" class="layui-input">
                         </div>
@@ -119,7 +179,7 @@
                 , { field: 'MaterialDesc', title: '物资名称' }
                 //, { field: 'MaterialDesc', title: '规格型号' }
                 //, { field: 'caizhi', title: '材质' }
-                , { field: 'MaterialCount', title: '数量'}
+                , { field: 'MaterialCount', title: '数量' }
                 , { field: 'PlanReportDept', title: '提报单位' }
                 , { field: 'PlanReportPerson', title: '提报人' }
                 , { field: 'PlanReportDateTime', title: '提报时间' }
@@ -173,7 +233,6 @@
             console.log(data.field) //当前容器的全部表单字段，名值对形式：{name: value}
             return false; //阻止表单跳转。如果需要表单跳转，去掉这段即可。
         });
-        //各种基于事件的操作，下面会有进一步介绍
     });
 </script>
 
